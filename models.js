@@ -10,7 +10,7 @@ const blogPostSchema = mongoose.Schema({
         lastName: String,
         required: true
     },
-    created: Date
+    created: {type: Date, default: Date.now}
 });
 
 blogPostSchema.virtual("authorName").get(function() {
