@@ -93,6 +93,7 @@ app.delete("/posts/:id", (req, res) => {
         .then(() => {
             console.log(`Deleting blog post \`${req.params.id}\``);
             res.status(204).end()
+        })
         .catch(err => {
             console.error(err);
             res.status(500).json({message: "Internal server error"});
@@ -147,5 +148,4 @@ if (require.main === module) {
 }
 
 module.exports = {app, runServer, closeServer};
-
 
